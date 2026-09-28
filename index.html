@@ -17,8 +17,8 @@
     }
 
     .card {
-      width: 350px;
-      height: 200px;
+      width: 331px;   /* ← 4号名刺比率に合わせた px サイズ */
+      height: 200px;  /* ← あなたの希望どおり高さを下げた */
       background: #ffffff;
       border: 1px solid #cccccc;
       border-radius: 0;
@@ -30,6 +30,16 @@
       flex-direction: column;
       justify-content: flex-start;
       text-align: left;
+    }
+
+    /* 印刷用（実寸 4号名刺） */
+    @media print {
+      .card {
+        width: 91mm;   /* ← 4号名刺の横幅 */
+        height: 55mm;  /* ← 4号名刺の高さ */
+        border: 1px dashed rgba(0, 0, 0, 0.3); /* ← 破線＋半透明で薄く */
+        box-shadow: none; /* 印刷では影を消す */
+      }
     }
 
     .face {
@@ -45,7 +55,7 @@
     /* ★ 名前だけ MS 明朝体に変更 ★ */
     .name {
       font-family: "MS Mincho", "Hiragino Mincho ProN", serif;
-      font-size: 1.75rem;
+      font-size: 1.8rem;
       font-weight: 600;
       margin: 10px 0 14px 0;
       text-align: left;
@@ -54,12 +64,12 @@
     .title {
       font-size: 0.8rem;
       color: #555555;
-      margin-bottom: 16px;
+      margin-bottom: 28px;
       padding-right: 10px;
     }
 
     .spacer {
-      height: 36px;
+      height: 60px;
     }
 
     .section-title {
