@@ -8,45 +8,75 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      background: #ffffff;
+      color: #000000;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
     }
+
+    /* 名刺サイズ固定（角丸なし） */
     .card {
-      background: #020617;
-      border: 1px solid #1f2937;
-      border-radius: 12px;
-      padding: 24px 28px;
-      max-width: 420px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+      width: 350px;
+      height: 200px;
+      background: #ffffff;
+      border: 1px solid #cccccc;
+      border-radius: 0; /* ← アールなし */
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: left;
     }
+
+    /* 顔画像：3:4 比率（角丸なし） */
+    .face {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 81px;   /* 横 */
+      height: 108px;  /* 縦（3:4） */
+      border-radius: 0; /* ← アールなし */
+      object-fit: cover;
+    }
+
     .name {
-      font-size: 1.6rem;
+      font-size: 1.75rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin: 10px 0 14px 0;
+      text-align: left;
     }
+
     .title {
-      font-size: 0.95rem;
-      color: #9ca3af;
-      margin-bottom: 16px;
-    }
-    .section-title {
       font-size: 0.8rem;
+      color: #555555;
+      margin-bottom: 16px;
+      padding-right: 10px;
+    }
+
+    .spacer {
+      height: 36px; /* 3行ぶん */
+    }
+
+    .section-title {
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #6b7280;
-      margin-top: 14px;
+      color: #777777;
       margin-bottom: 6px;
     }
+
     .item {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 4px;
     }
+
     a {
-      color: #38bdf8;
+      color: #0066cc;
       text-decoration: none;
     }
     a:hover {
@@ -56,11 +86,23 @@
 </head>
 <body>
   <main class="card">
+
+    <img src="face.png" class="face" alt="face">
+
+    <div class="title">
+      Gameginatortiscosiner<br>
+      ゲーム技術制作芸術作曲設計者
+    </div>
+
     <div class="name">田中雄一郎</div>
-    <div class="title">ゲームジニエイターティスコザイナー / Gameginatortiscosiner = Game x Engineer x Artist x Composer x Designer </div> </div>
+
+    <div class="spacer"></div>
 
     <div class="section-title">Contact</div>
-    <div class="item">Email: <a href="mailto:yuichiro_tanaka@outlook.jp">yuichiro_tanaka@outlook.jp</a></div>
+
+    <div class="item">
+      Email: <a href="mailto:yuichiro_tanaka@outlook.jp">yuichiro_tanaka@outlook.jp</a>
+    </div>
 
   </main>
 </body>
